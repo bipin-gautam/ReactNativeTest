@@ -22,8 +22,9 @@ const BackBtn = ({title, style = null}) => {
       ]}>
       <TouchableOpacity onPress={goBack} style={{flex: 1}}>
         <Image
-          source={require('../assets/image/path.png')}
-          style={{height: 20, width: 20, marginLeft: 10}}></Image>
+          source={require('../assets/image/backBtn.png')}
+          style={{marginLeft: 10}}
+        />
       </TouchableOpacity>
       <Text style={{fontSize: 30, fontWeight: 'bold'}}>{title}</Text>
       <View style={{flex: 1}} />
