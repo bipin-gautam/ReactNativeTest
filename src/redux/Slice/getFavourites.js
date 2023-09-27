@@ -1,16 +1,12 @@
-// merchantSlice.js
-
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axiosService from '../../utlis/axiosService';
 
-// Define the initial state
 const initialState = {
   favouriteList: [],
   loading: false,
   error: null,
 };
 
-// Define an async thunk to fetch merchants
 export const fetchFavourites = createAsyncThunk(
   'favouriteList/fetchFavourites',
   async (_, {rejectWithValue}) => {
@@ -25,7 +21,6 @@ export const fetchFavourites = createAsyncThunk(
   },
 );
 
-// Create a slice that generates actions and reducer
 const favouriteListSlice = createSlice({
   name: 'favouriteList',
   initialState,
@@ -49,5 +44,4 @@ const favouriteListSlice = createSlice({
   },
 });
 
-// Export the reducer
 export default favouriteListSlice.reducer;

@@ -1,16 +1,12 @@
-// merchantSlice.js
-
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axiosService from '../../utlis/axiosService';
 
-// Define the initial state
 const initialState = {
   merchants: [],
   loading: false,
   error: null,
 };
 
-// Define an async thunk to fetch merchants
 export const fetchMerchants = createAsyncThunk(
   'merchants/fetchMerchants',
   async (_, {rejectWithValue}) => {
@@ -25,7 +21,6 @@ export const fetchMerchants = createAsyncThunk(
   },
 );
 
-// Create a slice that generates actions and reducer
 const merchantSlice = createSlice({
   name: 'merchants',
   initialState,
@@ -49,5 +44,4 @@ const merchantSlice = createSlice({
   },
 });
 
-// Export the reducer
 export default merchantSlice.reducer;

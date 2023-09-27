@@ -10,7 +10,6 @@ const store = configureStore({
     favoriteMerchants: favoriteMerchantReducer,
     favouriteList: favouriteListReducer,
     merchantDetailReducer: merchantDetailReduced,
-    // Add other reducers if needed
   },
 });
 

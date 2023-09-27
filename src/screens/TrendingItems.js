@@ -9,14 +9,10 @@ import {
 import {Images} from '../constants/Images';
 import FONTS from '../constants/FONTS';
 import {useDispatch} from 'react-redux';
-import {useEffect} from 'react';
 import {toggleFavoriteMerchant} from '../redux/Slice/favoriteMerchants';
 
 const TrendingItem = ({item, onPress}) => {
-  // console.log('ITEM: ', item);
-
   const dispatch = useDispatch();
-
   const {commission} = item;
 
   return (
@@ -25,15 +21,11 @@ const TrendingItem = ({item, onPress}) => {
         style={styles.itemContainer}
         onPress={() => onPress(item)}>
         <ImageBackground source={Images.food2} style={styles.image}>
-          {/* Favorite Icon */}
-          {/* Add your favorite icon component */}
           <View style={{justifyContent: 'space-between', flex: 1}}>
             <View style={styles.favoriteIconContainer}>
-              {/* <View /> */}
               <TouchableOpacity
                 style={styles.favoriteIcon}
                 onPress={() => {
-                  // Dispatch the toggleFavoriteMerchant action when the button is pressed
                   dispatch(toggleFavoriteMerchant(item));
                 }}>
                 <Image
@@ -75,11 +67,6 @@ const TrendingItem = ({item, onPress}) => {
             <Text style={styles.description}>{item.name}</Text>
             <Image source={Images.group9} />
           </View>
-          {/* {categories?.map((field, index) => (
-            <View key={index}>
-              <Text>{field.category_name}:</Text>
-            </View>
-          ))} */}
         </View>
       </TouchableOpacity>
     </View>
@@ -98,7 +85,7 @@ const styles = {
     height: 142,
 
     borderRadius: 10,
-    overflow: 'hidden', // To clip the border-radius
+    overflow: 'hidden',
   },
   favoriteIconContainer: {
     alignItems: 'flex-end',

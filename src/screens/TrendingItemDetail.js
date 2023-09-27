@@ -14,7 +14,6 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {Images} from '../constants/Images';
 import {toggleFavoriteMerchant} from '../redux/Slice/favoriteMerchants';
 import {useDispatch, useSelector} from 'react-redux';
-
 import {fetchMerchantDetailAction} from '../redux/Slice/getMerchantDetail';
 import {ActivityIndicator} from 'react-native-paper';
 const {width} = Dimensions.get('window');
@@ -44,6 +43,8 @@ const TrendingItemDetail = () => {
   const route = useRoute();
   const item = route.params?.item;
   const {success} = useSelector(state => state.favoriteMerchants);
+
+  //fetching merchant detail
   useEffect(() => {
     dispatch(fetchMerchantDetailAction(item));
   }, [dispatch, success, item]);
