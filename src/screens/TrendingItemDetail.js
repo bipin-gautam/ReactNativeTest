@@ -48,7 +48,7 @@ const TrendingItemDetail = () => {
     dispatch(fetchMerchantDetailAction(item));
   }, [dispatch, success, item]);
 
-  const {merchantDetail, error, loading} = useSelector(
+  const {merchantDetail, loading} = useSelector(
     state => state.merchantDetailReducer,
   );
   const {distance} = merchantDetail;
